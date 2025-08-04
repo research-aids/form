@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+n<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -8,7 +8,14 @@
 <!--     <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
     <script>
         function check_title() {
-          var x = document.getElementById("title").innerHTML;
+          var title = document.getElementById("title");
+          if (document.activeElement === title) {
+            if (title.value.includes('illegal') {
+                document.getElementById("title-warn").innerHTML = "Illegal text"
+            } else {
+                document.getElementById("title-warn").innerHTML = ""
+            }
+          }
         }
     </script>
     <script src="index.js"></script>
@@ -28,9 +35,10 @@
           <br><br>
 
              <label for="title">Title</label>
-            <input type="text" id="title" name="title"><br>
+            <input type="text" id="title" name="title" onkeydown="check_title" value="PREFILLED"><span id="title-warn"></span><br>
         </form>
     </main>
   </body>
 </html>
+
 
