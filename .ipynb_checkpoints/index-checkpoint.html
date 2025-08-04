@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Research Aid Form</title>
     <link rel="stylesheet" href="./style.css">
 <!--     <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
@@ -46,7 +47,7 @@
                 function useList(responseList) {
                     document.getElementById("geonames-suggestions").innerHTML = responseList;
                 }
-                httpGetAsync("http://api.geonames.org/search?username=research_aids&maxRows=3&countryBias=nl&q="+place.value,
+                httpGetAsync("http://secure.geonames.org/search?username=research_aids&maxRows=3&countryBias=nl&q="+place.value,
                              useList);
                 
             }
