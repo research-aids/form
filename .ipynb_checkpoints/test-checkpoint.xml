@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<geonames style="MEDIUM">
+    <totalResultsCount>1617</totalResultsCount>
+    <geoname>
+        <toponymName>Amsterdam</toponymName>
+        <name>Amsterdam</name>
+        <lat>52.37403</lat>
+        <lng>4.88969</lng>
+        <geonameId>2759794</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLC</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Weesp</toponymName>
+        <name>Weesp</name>
+        <lat>52.3075</lat>
+        <lng>5.04167</lng>
+        <geonameId>2744904</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Nieuw-Amsterdam</toponymName>
+        <name>Nieuw-Amsterdam</name>
+        <lat>52.71167</lat>
+        <lng>6.85556</lng>
+        <geonameId>2750375</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amsterdam Airport Schiphol</toponymName>
+        <name>Amsterdam Airport Schiphol</name>
+        <lat>52.3103</lat>
+        <lng>4.76028</lng>
+        <geonameId>6296680</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>AIRP</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amsterdam-Zuidoost</toponymName>
+        <name>Amsterdam-Zuidoost</name>
+        <lat>52.3075</lat>
+        <lng>4.97222</lng>
+        <geonameId>6544881</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Gemeente Amsterdam</toponymName>
+        <name>Gemeente Amsterdam</name>
+        <lat>52.37302</lat>
+        <lng>4.89856</lng>
+        <geonameId>2759793</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM2</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Science Park Amsterdam</toponymName>
+        <name>Science Park Amsterdam</name>
+        <lat>52.355</lat>
+        <lng>4.95588</lng>
+        <geonameId>6944497</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amsterdam ArenA</toponymName>
+        <name>Amsterdam Arena</name>
+        <lat>52.31436</lat>
+        <lng>4.942</lng>
+        <geonameId>6544158</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>STDM</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Vondelpark</toponymName>
+        <name>Vondelpark</name>
+        <lat>52.35739</lat>
+        <lng>4.86733</lng>
+        <geonameId>2745324</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amstelpark</toponymName>
+        <name>Amstelpark</name>
+        <lat>52.3292</lat>
+        <lng>4.89424</lng>
+        <geonameId>2759799</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Flevopark</toponymName>
+        <name>Flevopark</name>
+        <lat>52.36139</lat>
+        <lng>4.95056</lng>
+        <geonameId>6951805</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Westerpark</toponymName>
+        <name>Westerpark</name>
+        <lat>52.38611</lat>
+        <lng>4.8775</lng>
+        <geonameId>6951813</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Oosterpark</toponymName>
+        <name>Oosterpark</name>
+        <lat>52.36064</lat>
+        <lng>4.92074</lng>
+        <geonameId>6639737</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Rijksmuseum</toponymName>
+        <name>Rijksmuseum Amsterdam</name>
+        <lat>52.35999</lat>
+        <lng>4.88536</lng>
+        <geonameId>6884785</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>MUS</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Paleis op de Dam</toponymName>
+        <name>Royal Palace of Amsterdam</name>
+        <lat>52.37314</lat>
+        <lng>4.89136</lng>
+        <geonameId>6951693</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>PAL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Van Gogh Museum</toponymName>
+        <name>Van Gogh Museum</name>
+        <lat>52.35854</lat>
+        <lng>4.88088</lng>
+        <geonameId>6884786</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>MUS</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Duivendrecht</toponymName>
+        <name>Duivendrecht</name>
+        <lat>52.32941</lat>
+        <lng>4.93964</lng>
+        <geonameId>2756504</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Schiphol</toponymName>
+        <name>Schiphol</name>
+        <lat>52.29843</lat>
+        <lng>4.79094</lng>
+        <geonameId>10173839</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Olympisch Stadion</toponymName>
+        <name>Olympic Stadium</name>
+        <lat>52.34339</lat>
+        <lng>4.8542</lng>
+        <geonameId>6951731</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>STDM</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Driemond</toponymName>
+        <name>Driemond</name>
+        <lat>52.30583</lat>
+        <lng>5.01667</lng>
+        <geonameId>2756584</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amsterdam Centraal Railway Station</toponymName>
+        <name>Amsterdam Centraal Railway Station</name>
+        <lat>52.37895</lat>
+        <lng>4.90016</lng>
+        <geonameId>2759790</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>RSTN</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Vrije Universiteit Amsterdam</toponymName>
+        <name>VU University Amsterdam</name>
+        <lat>52.33386</lat>
+        <lng>4.86512</lng>
+        <geonameId>6951830</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>UNIV</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Zunderdorp</toponymName>
+        <name>Zunderdorp</name>
+        <lat>52.40667</lat>
+        <lng>4.96528</lng>
+        <geonameId>2743620</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Kadoelen</toponymName>
+        <name>Kadoelen</name>
+        <lat>52.4175</lat>
+        <lng>4.90561</lng>
+        <geonameId>2753148</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Holysloot</toponymName>
+        <name>Holysloot</name>
+        <lat>52.41333</lat>
+        <lng>5.025</lng>
+        <geonameId>2753843</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Durgerdam</toponymName>
+        <name>Durgerdam</name>
+        <lat>52.3777</lat>
+        <lng>4.98908</lng>
+        <geonameId>2756485</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Sloten</toponymName>
+        <name>Sloten</name>
+        <lat>52.34167</lat>
+        <lng>4.79722</lng>
+        <geonameId>2747132</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Schellingwoude</toponymName>
+        <name>Schellingwoude</name>
+        <lat>52.38419</lat>
+        <lng>4.96385</lng>
+        <geonameId>2747640</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Ransdorp</toponymName>
+        <name>Ransdorp</name>
+        <lat>52.39325</lat>
+        <lng>4.99406</lng>
+        <geonameId>2748327</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Osdorp</toponymName>
+        <name>Osdorp</name>
+        <lat>52.35694</lat>
+        <lng>4.80077</lng>
+        <geonameId>2749242</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Concertgebouw</toponymName>
+        <name>Concertgebouw</name>
+        <lat>52.3564</lat>
+        <lng>4.8796</lng>
+        <geonameId>6944491</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>THTR</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amsterdam-Rijnkanaal</toponymName>
+        <name>Amsterdam-Rijnkanaal</name>
+        <lat>51.98565</lat>
+        <lng>5.25533</lng>
+        <geonameId>2759788</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>H</fcl>
+        <fcode>CNL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amsterdam Binnenstad</toponymName>
+        <name>Amsterdam Binnenstad</name>
+        <lat>52.37216</lat>
+        <lng>4.90437</lng>
+        <geonameId>8199406</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Sloterdijk</toponymName>
+        <name>Sloterdijk</name>
+        <lat>52.3871</lat>
+        <lng>4.84682</lng>
+        <geonameId>2747129</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Weesperzijde</toponymName>
+        <name>Weesperzijde</name>
+        <lat>52.35301</lat>
+        <lng>4.91055</lng>
+        <geonameId>7648382</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Noord</toponymName>
+        <name>Noord</name>
+        <lat>52.39079</lat>
+        <lng>4.90994</lng>
+        <geonameId>7648384</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Jordaan</toponymName>
+        <name>Jordaan</name>
+        <lat>52.37439</lat>
+        <lng>4.88059</lng>
+        <geonameId>2753201</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Geuzenveld</toponymName>
+        <name>Geuzenveld</name>
+        <lat>52.3779</lat>
+        <lng>4.79965</lng>
+        <geonameId>2755553</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Tuindorp Oostzaan</toponymName>
+        <name>Tuindorp Oostzaan</name>
+        <lat>52.41321</lat>
+        <lng>4.88806</lng>
+        <geonameId>2746122</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Slotervaart</toponymName>
+        <name>Slotervaart</name>
+        <lat>52.35547</lat>
+        <lng>4.82815</lng>
+        <geonameId>2747125</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Slotermeer</toponymName>
+        <name>Slotermeer</name>
+        <lat>52.37832</lat>
+        <lng>4.82231</lng>
+        <geonameId>2747127</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Nieuwendam</toponymName>
+        <name>Nieuwendam</name>
+        <lat>52.39215</lat>
+        <lng>4.94342</lng>
+        <geonameId>2750287</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Buikslotermeer</toponymName>
+        <name>Buikslotermeer</name>
+        <lat>52.4</lat>
+        <lng>4.95</lng>
+        <geonameId>2758158</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Buiksloot</toponymName>
+        <name>Buiksloot</name>
+        <lat>52.40807</lat>
+        <lng>4.91896</lng>
+        <geonameId>2758159</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Bos en Lommer</toponymName>
+        <name>Bos en Lommer</name>
+        <lat>52.37948</lat>
+        <lng>4.84755</lng>
+        <geonameId>2758564</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Bijlmermeer</toponymName>
+        <name>Bijlmermeer</name>
+        <lat>52.31667</lat>
+        <lng>4.96667</lng>
+        <geonameId>2758946</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>IJburg</toponymName>
+        <name>IJburg</name>
+        <lat>52.35463</lat>
+        <lng>4.99826</lng>
+        <geonameId>7118108</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>De Aker</toponymName>
+        <name>De Aker</name>
+        <lat>52.35154</lat>
+        <lng>4.78025</lng>
+        <geonameId>6951635</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Oud West</toponymName>
+        <name>Oud West</name>
+        <lat>52.36643</lat>
+        <lng>4.86694</lng>
+        <geonameId>7648380</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>De Pijp</toponymName>
+        <name>De Pijp</name>
+        <lat>52.35505</lat>
+        <lng>4.89063</lng>
+        <geonameId>7648381</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Oud Zuid</toponymName>
+        <name>Oud Zuid</name>
+        <lat>52.35196</lat>
+        <lng>4.87999</lng>
+        <geonameId>7648383</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>De Wallen</toponymName>
+        <name>De Wallen</name>
+        <lat>52.37348</lat>
+        <lng>4.89806</lng>
+        <geonameId>7648385</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>IJmuiden Port Amsterdam</toponymName>
+        <name>IJmuiden Ferry Port</name>
+        <lat>52.46291</lat>
+        <lng>4.58512</lng>
+        <geonameId>9253533</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRT</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Watergraafsmeer</toponymName>
+        <name>Watergraafsmeer</name>
+        <lat>52.34918</lat>
+        <lng>4.93629</lng>
+        <geonameId>2744976</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>'t Nopeind</toponymName>
+        <name>'t Nopeind</name>
+        <lat>52.41001</lat>
+        <lng>4.96333</lng>
+        <geonameId>2746241</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Buitenveldert</toponymName>
+        <name>Buitenveldert</name>
+        <lat>52.33093</lat>
+        <lng>4.87518</lng>
+        <geonameId>2758125</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLX</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Amerikahaven</toponymName>
+        <name>Amerikahaven</name>
+        <lat>52.41111</lat>
+        <lng>4.77588</lng>
+        <geonameId>2759829</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRT</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>De Hoge Dijk</toponymName>
+        <name>De Hoge Dijk</name>
+        <lat>52.28294</lat>
+        <lng>4.96432</lng>
+        <geonameId>7115065</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Westerkerk</toponymName>
+        <name>Westerkerk</name>
+        <lat>52.37453</lat>
+        <lng>4.88399</lng>
+        <geonameId>6950949</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>CH</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Leidseplein</toponymName>
+        <name>Leidseplein</name>
+        <lat>52.3634</lat>
+        <lng>4.8815</lng>
+        <geonameId>6944492</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>SQR</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Artis</toponymName>
+        <name>Natura Artis Magistra</name>
+        <lat>52.36592</lat>
+        <lng>4.91642</lng>
+        <geonameId>6951705</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>ZOO</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Entrepotdok</toponymName>
+        <name>Entrepotdok</name>
+        <lat>52.36771</lat>
+        <lng>4.91694</lng>
+        <geonameId>6951712</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRT</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Sloterpark</toponymName>
+        <name>Sloterpark</name>
+        <lat>52.3659</lat>
+        <lng>4.81321</lng>
+        <geonameId>6951794</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Beatrixpark</toponymName>
+        <name>Beatrixpark</name>
+        <lat>52.34278</lat>
+        <lng>4.88194</lng>
+        <geonameId>6951802</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Bijlmerpark</toponymName>
+        <name>Bijlmerpark</name>
+        <lat>52.31056</lat>
+        <lng>4.97333</lng>
+        <geonameId>6951803</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Eendrachtspark</toponymName>
+        <name>Eendrachtspark</name>
+        <lat>52.38167</lat>
+        <lng>4.80917</lng>
+        <geonameId>6951804</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Florapark</toponymName>
+        <name>Florapark</name>
+        <lat>52.39306</lat>
+        <lng>4.91889</lng>
+        <geonameId>6951806</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Gerbrandypark</toponymName>
+        <name>Gerbrandypark</name>
+        <lat>52.3775</lat>
+        <lng>4.83028</lng>
+        <geonameId>6951807</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Gijsbrecht van Aemstelpark</toponymName>
+        <name>Gijsbrecht van Aemstelpark</name>
+        <lat>52.32944</lat>
+        <lng>4.86917</lng>
+        <geonameId>6951808</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Martin Luther Kingpark</toponymName>
+        <name>Martin Luther Kingpark</name>
+        <lat>52.33944</lat>
+        <lng>4.90667</lng>
+        <geonameId>6951809</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Noorderpark</toponymName>
+        <name>Noorderpark</name>
+        <lat>52.39472</lat>
+        <lng>4.91944</lng>
+        <geonameId>6951810</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Vliegenbos</toponymName>
+        <name>Vliegenbos</name>
+        <lat>52.38944</lat>
+        <lng>4.93167</lng>
+        <geonameId>6951811</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Wertheimpark</toponymName>
+        <name>Wertheimpark</name>
+        <lat>52.36806</lat>
+        <lng>4.90917</lng>
+        <geonameId>6951812</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Volewijkspark</toponymName>
+        <name>Volewijkspark</name>
+        <lat>52.39265</lat>
+        <lng>4.9217</lng>
+        <geonameId>6951814</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>PRK</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Museumplein</toponymName>
+        <name>Museumplein</name>
+        <lat>52.35722</lat>
+        <lng>4.88194</lng>
+        <geonameId>7602112</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>SQR</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Ruigoord</toponymName>
+        <name>Ruigoord</name>
+        <lat>52.40849</lat>
+        <lng>4.74867</lng>
+        <geonameId>6544872</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>P</fcl>
+        <fcode>PPLL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>The Jordaan</toponymName>
+        <name>The Jordaan</name>
+        <lat>52.3774</lat>
+        <lng>4.8817</lng>
+        <geonameId>10292229</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>L</fcl>
+        <fcode>LCTY</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Noord</toponymName>
+        <name>Noord</name>
+        <lat>52.39995</lat>
+        <lng>4.97615</lng>
+        <geonameId>11525045</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Centrum</toponymName>
+        <name>Centrum</name>
+        <lat>52.37161</lat>
+        <lng>4.89974</lng>
+        <geonameId>11525046</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Westpoort</toponymName>
+        <name>Westpoort</name>
+        <lat>52.40975</lat>
+        <lng>4.80036</lng>
+        <geonameId>11525047</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>West</toponymName>
+        <name>West</name>
+        <lat>52.37904</lat>
+        <lng>4.8629</lng>
+        <geonameId>11525048</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Nieuw-West</toponymName>
+        <name>Nieuw-West</name>
+        <lat>52.36642</lat>
+        <lng>4.80332</lng>
+        <geonameId>11525049</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Zuid</toponymName>
+        <name>Zuid</name>
+        <lat>52.34134</lat>
+        <lng>4.87473</lng>
+        <geonameId>11525050</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Oost</toponymName>
+        <name>Oost</name>
+        <lat>52.35723</lat>
+        <lng>4.96251</lng>
+        <geonameId>11525051</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Zuidoost</toponymName>
+        <name>Zuidoost</name>
+        <lat>52.30655</lat>
+        <lng>4.97325</lng>
+        <geonameId>11525052</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>A</fcl>
+        <fcode>ADM3</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Dam Square</toponymName>
+        <name>Dam Square</name>
+        <lat>52.37293</lat>
+        <lng>4.89336</lng>
+        <geonameId>6930383</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>SQR</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Stadsschouwburg Amsterdam</toponymName>
+        <name>Stadsschouwburg Amsterdam</name>
+        <lat>52.36422</lat>
+        <lng>4.88209</lng>
+        <geonameId>6951703</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>THTR</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Station Nieuw Amsterdam</toponymName>
+        <name>Station Nieuw Amsterdam</name>
+        <lat>52.71833</lat>
+        <lng>6.84856</lng>
+        <geonameId>6639927</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>RSTN</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Verzetsmuseum Amsterdam</toponymName>
+        <name>Dutch Resistance Museum</name>
+        <lat>52.36782</lat>
+        <lng>4.91269</lng>
+        <geonameId>6951743</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>MUS</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Hilton Amsterdam</toponymName>
+        <name>Hilton Amsterdam</name>
+        <lat>52.351</lat>
+        <lng>4.872</lng>
+        <geonameId>6468391</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>HTL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Waldorf Astoria Amsterdam</toponymName>
+        <name>Waldorf Astoria Amsterdam</name>
+        <lat>52.36474</lat>
+        <lng>4.89696</lng>
+        <geonameId>9254505</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>HTL</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Station Amsterdam Muiderpoort</toponymName>
+        <name>Station Amsterdam Muiderpoort</name>
+        <lat>52.36035</lat>
+        <lng>4.93132</lng>
+        <geonameId>2759789</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>RSTN</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Station Amsterdam Science Park</toponymName>
+        <name>Station Amsterdam Science Park</name>
+        <lat>52.35259</lat>
+        <lng>4.94914</lng>
+        <geonameId>7115018</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>RSTN</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Sexmuseum Amsterdam</toponymName>
+        <name>Sexmuseum Amsterdam</name>
+        <lat>52.3765</lat>
+        <lng>4.8973</lng>
+        <geonameId>6954088</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>MUS</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Station Amsterdam Holendrecht</toponymName>
+        <name>Station Amsterdam Holendrecht</name>
+        <lat>52.29746</lat>
+        <lng>4.96054</lng>
+        <geonameId>6950828</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>RSTN</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>The Amsterdam Dungeon</toponymName>
+        <name>The Amsterdam Dungeon</name>
+        <lat>52.36999</lat>
+        <lng>4.8919</lng>
+        <geonameId>6951726</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>MUS</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Hermitage Amsterdam</toponymName>
+        <name>Hermitage Amsterdam</name>
+        <lat>52.36535</lat>
+        <lng>4.90286</lng>
+        <geonameId>6951739</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>MUS</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Stadsarchief Amsterdam</toponymName>
+        <name>Stadsarchief Amsterdam</name>
+        <lat>52.36462</lat>
+        <lng>4.89226</lng>
+        <geonameId>6951740</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>ADMF</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>NEMO (Amsterdam)</toponymName>
+        <name>NEMO (Amsterdam)</name>
+        <lat>52.37402</lat>
+        <lng>4.91235</lng>
+        <geonameId>6951755</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>MUS</fcode>
+    </geoname>
+    <geoname>
+        <toponymName>Nationaal Rugby Centrum Amsterdam</toponymName>
+        <name>Nationaal Rugby Centrum Amsterdam</name>
+        <lat>52.3787</lat>
+        <lng>4.78616</lng>
+        <geonameId>6951788</geonameId>
+        <countryCode>NL</countryCode>
+        <countryName>The Netherlands</countryName>
+        <fcl>S</fcl>
+        <fcode>STDM</fcode>
+    </geoname>
+</geonames>

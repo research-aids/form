@@ -14,71 +14,108 @@
         
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        function checkTitle() {
-            var title = document.getElementById("title");
-
-            if (title.value.includes('Personen')) {
-                document.getElementById("title-warn").innerHTML = "This title already exists.";
-                title.style.backgroundColor = "red";
-            } else {
-                document.getElementById("title-warn").innerHTML = "";
-                title.style.backgroundColor = ''; 
-            }
-        }
-        
-        function httpGetAsync(theUrl, callback)
-        {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.onreadystatechange = function() { 
-                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                    callback(xmlHttp.responseText);
-            }
-            xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-            xmlHttp.send(null);
-        }
-        
-        function geonamesSuggestions(){
-            var place = document.getElementById("place");
-            if (place.value === "") {
-                alert(document.getElementById("geonames-suggestions").innerHTML);
-                document.getElementById("geonames-suggestions").innerHTML = "";
-            } else {
-                function useList(responseList) {
-                    document.getElementById("geonames-suggestions").innerHTML = responseList;
-                }
-                httpGetAsync("http://secure.geonames.org/search?username=research_aids&maxRows=3&countryBias=nl&q="+place.value,
-                             useList);
-                
-            }
-        }
-
-    </script>
     <script src="index.js"></script>
 
   </head>
   <body>
     <main>
+        <div>
         <h1>Research Aid Form</h1>
-        <form>
-           <label for="level">Level: </label>
-
-            <select name="level" id="level">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+        <form id="basic-info">
+            <label for="language">Language: </label>
+            <select name="language" id="language">
+                <option value="en">English</option>
+                <option value="nl">Nederlands</option>
             </select>
-          <br><br>
-
-             <label for="title">Title: </label>
-            <input type="text" id="title" name="title" onkeyup="checkTitle()" value="PREFILLED"><small id="title-warn" style="color:red;padding:1em;"></small><br><br>
-
-             <label for="place">Place: </label>
-            <input type="text" id="place" name="place" onkeyup="geonamesSuggestions()" value=""><br>
-            <!-- <datalist id="place-suggestions"></datalist> -->
-            <dev id="geonames-suggestions"></dev>
+            <br><br>
+            <label for="level">Level: </label>
+            <select name="level" id="level" onchange="displayLevelForm()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <br><br>
+            <label for="title">Title: </label>
+            <input type="text" id="title" name="title" onkeyup="checkTitle()" value="PREFILLED">
+            <small id="title-warn" style="color:red;padding:1em;"></small>
         </form>
+        </div>
+        <br><br>
+        <div id="form-lvl-1" class="form">
+            <h2>Level 1</h2>
+            <form id="main-info">
+                <label for="abstract">Abstract: </label>
+                <textarea id="abstract" name="abstract" rows="1" cols="50">
+                </textarea>
+                
+                <br><br>
+                
+                <label for="main-text">Main Text: </label>
+                <textarea id="main-text" name="main-text" rows="4" cols="50">
+                </textarea>
+                
+                <br><br>
+                
+                <label for="related-aids">Related Research Aids: </label>
+                <input type="text" id="related-aids" name="related-aids" onkeyup="relatedAidsSuggestions()" value=""><br>
+                <!-- <datalist id="place-suggestions"></datalist> -->
+                <select name="relation type" id="rel-type">
+                  <option value="see also">see also</option>
+                  <option value="broader">broader</option>
+                  <option value="narrower">reviewer</option>
+                  <option value="other">other</option>
+                </select>
+                <input type="button" id="add-related-aid" name="related-aids" onclick="addRelatedAid" value="+">
+                <dev id="related-aids-suggestions"></dev>
 
+                <br><br>
+
+                <label for="copyright">Copyright by:</label>
+                <input type="text" id="copyright" name="copyright">
+                <input type="date" id="copyright-time" name="copyright-time">
+                <input type="text" id="copyright-license" name="copyright-license">
+            </form>
+        </div>
+        <div id="form-lvl-2" class="form">
+            <h2>Level 2</h2>
+            <form>
+                <label for="place">Place: </label>
+                <input type="text" id="place" name="place" onkeyup="geonamesSuggestions()" value=""><br>
+                <!-- <datalist id="place-suggestions"></datalist> -->
+                <dev id="geonames-suggestions"></dev>
+                <br><br>
+                
+            </form>
+        </div>
+        <div id="form-lvl-3" class="form">
+            <h2>Level 3</h2>
+            <form>
+                <label for="place">Place: </label>
+                <input type="text" id="place" name="place" onkeyup="geonamesSuggestions()" value=""><br>
+                <!-- <datalist id="place-suggestions"></datalist> -->
+                <dev id="geonames-suggestions"></dev>
+                <br><br>
+                
+            </form>
+        </div>
+        <br>
+        <div>
+            <form>
+                <label for="edit">Edit Info: </label>
+                <input type="text" id="editor" name="editor">
+                <input type="date" id="edit-time" name="edit-time">
+                <select name="edit-role" id="edit-role">
+                  <option value="original_author">original author</option>
+                  <option value="translator">transator</option>
+                  <option value="reviewer">reviewer</option>
+                  <option value="other">other</option>
+                </select>
+            </form>
+        </div>
+        <br>
+        <div>
+            <input type="button" id="submit" name="submit" value="Submit" onclick="submitForm()">
+        </div>
     </main>
   </body>
 </html>
