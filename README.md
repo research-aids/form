@@ -13,3 +13,9 @@ Entry form for the Research Aids -- auto-generates or -edits YAML files based on
    -> need script to transform YAML file to form values (AND VICE-VERSA, duh)
    -> need to generate a PAT for the form repo to be able to create commits in the `research-guides-dev` repo
 
+
+
+### TODO
+
+ - add tooltips
+  - for field `Language`: "Language tag for the Research Aid itself; this form (currently) only exists in English."    
