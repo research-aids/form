@@ -18,4 +18,4 @@ Entry form for the Research Aids -- auto-generates or -edits YAML files based on
 ### TODO
 
  - add tooltips
-  - for field `Language`: "Language tag for the Research Aid itself; this form (currently) only exists in English."    
+   - for field `Language`: "Language tag for the Research Aid itself; this form (currently) only exists in English."    
