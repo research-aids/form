@@ -19,3 +19,15 @@ Entry form for the Research Aids -- auto-generates or -edits YAML files based on
 
  - add tooltips
    - for field `Language`: "Language tag for the Research Aid itself; this form (currently) only exists in English."    
+
+
+### Form to GitHub
+
+ - [this page](https://stackoverflow.com/questions/38627115/upload-files-to-github-directory-using-github-api) contains the following command:
+   `curl -i -X PUT -H ‘Authorization: token 9xxxxxxxxxxxxxxxxxxxxxxxe2’ -d
+‘{“message”: “uploading a sample pdf”,
+“content”:”bXkgbm……………………………..”
+}’ https://api.github.com/repos/batman/toys/contents/sample.pdf`, where the `"content"` property is a base64 encoded string of characters.
+
+- [page from GitHub API for JS](https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#create-or-update-file-contents):
+  -> uses the OctoKit library
