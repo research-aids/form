@@ -39,6 +39,11 @@ function autofill() {
       document.getElementById("activity-start").value = curRA["Relevant data"]["Period of activity"]["Year of start"];
       document.getElementById("activity-end").value = curRA["Relevant data"]["Period of activity"]["Year of end"];
 
+
+
+      for (s of curRA["Sources"]["Primary sources"]) {
+        
+      }
     }
 }
 
@@ -56,6 +61,9 @@ function clearall() {
   var today = new Date();
   document.getElementById("copyright-time").value = today.toISOString().substr(0, 10);  
   document.getElementById("copyright-license").value = "";
+  
+  document.getElementById("activity-start").value = "";
+  document.getElementById("activity-end").value = "";
 }
 
 

@@ -115,7 +115,7 @@ function fillTitles() {
     var level = document.getElementById("level").value;
     // var curTitles = [];
     var options = document.getElementById('matching-RAs');
-    clearElement(options);
+    options.innerHTML = "";// clearElement(options);
 
     // var optGroup = document.createElement("optgroup");
     // optGroup.label = `Level ${level}`;
@@ -135,7 +135,7 @@ function fillTitles() {
 function fillRelatedRAs() {
     var lang = document.getElementById("language").value;
     var options = document.getElementById('related-aid-name');
-    clearElement(options);
+    options.innerHTML = ""; //clearElement(options);
     
     var cur = RAs[lang];  
     for (var lvl in cur) {
