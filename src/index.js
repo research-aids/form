@@ -89,14 +89,22 @@ async function init() {
     
     fillTitles();
     fillRelatedRAs();
-    
+
+
+    var copyright_Date = document.getElementById("copyright-time");
+    var edit_Date = document.getElementById("edit-time");
+
+    var today = new Date();
+    copyright_Date.value = today.toISOString().substr(0, 10);
+    edit_Date.value = today.toISOString().substr(0, 10);
+
 }
 
 
 function clearElement(elem) {
   if (typeof variable !== 'undefined' && variable !== null){
     while (options.firstChild) {
-      options.removeChild(options.lastChild);
+      options.removeChild(options.firstChild);
     }
   }
 }

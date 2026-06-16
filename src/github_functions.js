@@ -44,10 +44,10 @@ async function listRAs(level, language){
     // var octokit = await getOctokit();
     // var langEN = (language == 'English') ? 'English' : 'Dutch'; 
     var path = `published/niveau${level}/${language}/`
-    var folderContents = await octokit.request('GET /repos/valevo/form-auto-commit-test/contents/'+path, 
+    var folderContents = await octokit.request('GET /repos/colonial-heritage/research-aids/contents/'+path, 
                                                {
                                                     owner: 'OWNER',
-                                                    repo: 'form-auto-commit-test',
+                                                    repo: 'research-aids',
                                                     path: path,
                                                     headers: {
                                                       'X-GitHub-Api-Version': '2022-11-28'
@@ -81,9 +81,9 @@ async function listAll() {
 
 async function getRAContents(level, lang, fileName) {
     var filePath = `published/niveau${level}/${lang}/${fileName}`;
-    var file = await octokit.request('GET /repos/valevo/form-auto-commit-test/contents/'+filePath, {
+    var file = await octokit.request('GET /repos/colonial-heritage/research-aids/contents/'+filePath, {
           owner: 'OWNER',
-          repo: 'form-auto-commit-test',
+          repo: 'research-aids',
           path: filePath,
           headers: {
             'X-GitHub-Api-Version': '2022-11-28'

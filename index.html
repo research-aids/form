@@ -22,6 +22,8 @@
     <script src="./src/lists.js"></script>
     <script src="./src/tabs.js"></script>
     <script src="./src/index.js"></script>
+    <script src="./src/auto_fill.js"></script>
+
   </head>
   <body onload="init()">
     <!-- https://www.w3schools.com/css/css_tooltip.asp -->
@@ -77,24 +79,27 @@
         <hr>
         <div class="section" id="text-info">
           <h3>Abstract</h3>
-          <div class="mde" id="abstract-commandbar"></div>
-          <div class="mde text-box" id="abstract"></div>
-          <script>
-            var tinyMDE1 = new TinyMDE.Editor({element: 'abstract', content:""});
-            var commandBar1 = new TinyMDE.CommandBar({element: 'abstract-commandbar', editor: tinyMDE1});
-          </script>
-          <!-- <textarea id="abstract" name="abstract" rows="2" cols="50">
-          </textarea> -->
+          <div>
+            <div class="mde" id="abstract-commandbar"></div>
+            <div class="mde text-box" id="abstract"></div>
+            <script>
+              var tinyMDE1 = new TinyMDE.Editor({element: 'abstract', content:""});
+              var commandBar1 = new TinyMDE.CommandBar({element: 'abstract-commandbar', editor: tinyMDE1});
+            </script>
+            <!-- <textarea id="abstract" name="abstract" rows="2" cols="50">
+            </textarea> -->
+          </div>
           <h3>Main Text</h3>
-          <!-- <textarea id="main-text" name="abstract" rows="6" cols="50">
-          </textarea> -->
-          <div class="mde" id="main-text-commandbar"></div>
-          <div class="mde text-box" id="main-text"></div>
-          <script>
-            var tinyMDE2 = new TinyMDE.Editor({element: 'main-text', content:""});
-            var commandBar2 = new TinyMDE.CommandBar({element: 'main-text-commandbar', editor: tinyMDE2});
-          </script>
-
+          <div>
+            <!-- <textarea id="main-text" name="abstract" rows="6" cols="50">
+            </textarea> -->
+            <div class="mde" id="main-text-commandbar"></div>
+            <div class="mde text-box" id="main-text"></div>
+            <script>
+              var tinyMDE2 = new TinyMDE.Editor({element: 'main-text', content:""});
+              var commandBar2 = new TinyMDE.CommandBar({element: 'main-text-commandbar', editor: tinyMDE2});
+            </script>
+          </div>
           <!-- <div class="mde" id="main-text-commandbar"></div>
           <div class="mde" id="main-text-container">
             <textarea class="mde" id="main-text" rows="20" cols="50" onkeyup="test()">
@@ -138,7 +143,8 @@
                 </select>
                 </td>
               <td>
-                <input type="button" value="add RA" id="related-aid-add" onclick="createListElement('related-aid-list', createRelatedRA())">
+                <input type="button" value="add RA" id="related-aid-add" 
+                  onclick="createListElement('related-aid-list', createRelatedRAFromHTML())">
               </td>
             </tr>
           </table>
@@ -298,8 +304,14 @@
                     <option value="other">other</option>
                   </select>
                 </td>
+                <td>              
+                  <button type="submit" value="add edit" id="edit-add" 
+                    onclick="createListElement('edits-list', createEditFromHTML())">add edit
+                  </button>
+                </td>
               </tr>
             </table>
+            <ol id="edits-list"></ol>
           </div>
         </div>
 

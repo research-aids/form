@@ -135,9 +135,9 @@ function createListElement(listId, elementInnerHTML) {
 }
 
 
-function createRelatedRA() {
-    var name = document.getElementById("related-aid-name").value;
-    var rel = document.getElementById("related-aid-relationship").value;
+function createRelatedRA(name, rel) {
+    // var name = document.getElementById("related-aid-name").value;
+    // var rel = document.getElementById("related-aid-relationship").value;
 
     if (name.trim().length < 1) {
       alert("The name field was empty! Please provide a name");
@@ -156,6 +156,13 @@ function createRelatedRA() {
         <span class="glyphicon glyphicon-remove"></span>
       </button>
     </p>`;
+}
+
+function createRelatedRAFromHTML() {
+    var name = document.getElementById("related-aid-name").value;
+    var rel = document.getElementById("related-aid-relationship").value;
+    return createRelatedRA(name, rel);
+
 }
 
 function createGeo() {
@@ -209,3 +216,19 @@ function addSource() {
 }
 
 
+function createEdit(author, date, role) {
+  return `<p class="one"><b>${author}</b><i>${role}</i><i>${date}</i></p>
+    <p class="two">
+      <button type="button" class="remove-btn" onclick="removeListElem(this)">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </p>`;
+}
+
+function createEditFromHTML() {
+    var author = document.getElementById("editor").value;
+    var date = document.getElementById("edit-time").value;
+    var role = document.getElementById("edit-role").value;
+
+    return createEdit(author, date, role);
+}
