@@ -1,0 +1,146 @@
+main {
+    height: 100%;
+    display: flex;
+}
+
+/* main > * {
+    margin: 1%;
+    padding: 5%;
+} */
+
+
+h3 {
+  /* border-bottom: 1px dashed black; */
+  text-decoration: underline;
+  
+}
+
+
+#lhs {
+    margin: 1%;
+    margin-right: 1%;
+    background-color: #ccccff;
+    flex: 70%;
+    height: 100%;
+    padding: 1%;
+    overflow: scroll;
+    /* border: 2px solid grey; */
+}
+
+#rhs {
+    margin-left: 1%;
+    background-color: white;
+    /* border: 2px solid grey; */
+    flex: 40%;
+}
+
+#basic-info h3 {
+  padding-right: 10%;
+}
+
+
+#basic-info div {
+  width: 60%;
+  display: flex;
+  
+}
+
+#basic-info div * {
+  flex: 10%;
+  /* margin-right: 5%; */
+}
+
+
+
+hr { 
+  background-color: black; 
+  height: 1px; 
+  border: 0; 
+  margin-top: 7%;
+  margin-bottom: 3%;
+}
+
+
+
+
+
+.mde {
+  width:80%;
+  border:1px solid #c0c0c0;
+
+}
+
+
+.text-box {
+  height: 130px;
+  width: 80%;
+  overflow-y: scroll;
+  resize: both;
+  background-color: white;
+  backdrop-filter: brightness(95%);
+}
+
+#main-text {
+  background-color: white;
+  /* backdrop-filter: brightness(95%); */
+
+  height: 250px;
+}
+
+/* #main-text-container {
+  
+} */
+
+textarea {
+  display: flex;
+  height: 100px; 
+  overflow-y:scroll; 
+  resize: none;
+}
+
+
+
+#activity-period {
+  /* margin: 5%; */
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+#form-footer {
+  /* border-top: 1px solid black; */
+  margin-top: 2%;
+  display: flex;
+  width: 50%;
+}
+
+#preview-button {
+  flex: 50%;
+}
+#submit {
+  flex: 50%;
+}
+
+.submit-button {
+  background-color: inherit;
+  float: left;
+  border: none; 
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  /* transition: 0.1s; */
+  /* transition: border-color 1s ease;   */
+  font-size: 20;
+  margin:1px;
+  backdrop-filter: brightness(95%);
+}
+
+
+
+.section > div {
+  
+  margin: 5%;
+  margin-left: 2%;
+}
+
+

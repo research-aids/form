@@ -1,0 +1,59 @@
+ol {
+  margin: 5%;
+}
+li {
+  /* border: 1px solid black; */
+  cursor: grab;
+  padding: 1rem;
+  display: flex;
+}
+
+li:nth-child(odd) {
+  /* background-color: #e6e6ff; */
+  /* filter: saturate(50%) brightness(130%); */
+  backdrop-filter: brightness(105%);
+  
+}
+
+li:active {
+  cursor: grabbing;
+}
+
+li .one {
+  flex: 70%;
+}
+
+li .one * {
+  padding-right: 20%;
+}
+
+li .two *{
+  flex: 30%;
+  align: right;
+}
+
+/* li:after{
+    
+} */
+
+
+.over {
+  border-top: 3px solid black;
+  opacity: 0.5;
+}
+
+
+.remove-btn {
+    font-size: 20px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.remove-btn:hover {
+    
+}
+

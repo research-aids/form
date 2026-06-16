@@ -2,122 +2,337 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <title>Research Aid Form</title>
-    <link rel="stylesheet" href="./style.css">
-<!--     <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
-    <style>
-        totalresultscount { display:None;}
-        geonames geoname toponymname {display: block;}
-        toponymname {font-weight: bold;}
-        
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/tiny-markdown-editor/dist/tiny-mde.min.css"/>
 
+    <link rel="stylesheet" href="./css/tabs.css">
+    <link rel="stylesheet" href="./css/lists.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/tiny-markdown-editor/dist/tiny-mde.min.js"></script>
+
+
+    <script src="./src/github_functions.js"></script>
+    <script src="./src/lists.js"></script>
+    <script src="./src/tabs.js"></script>
+    <script src="./src/index.js"></script>
   </head>
-  <body>
+  <body onload="init()">
+    <!-- https://www.w3schools.com/css/css_tooltip.asp -->
     <main>
-        <div>
+      <div id="lhs">
         <h1>Research Aid Form</h1>
-        <form id="basic-info">
-            <label for="language">Language: </label>
-            <select name="language" id="language">
-                <option value="en">English</option>
-                <option value="nl">Nederlands</option>
-            </select>
-            <br><br>
-            <label for="level">Level: </label>
-            <select name="level" id="level" onchange="displayLevelForm()">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <br><br>
-            <label for="title">Title: </label>
-            <input type="text" id="title" name="title" onkeyup="checkTitle()" value="PREFILLED">
-            <small id="title-warn" style="color:red;padding:1em;"></small>
-        </form>
-        </div>
-        <br><br>
-        <div id="form-lvl-1" class="form">
-            <h2>Level 1</h2>
-            <form id="main-info">
-                <label for="abstract">Abstract: </label>
-                <textarea id="abstract" name="abstract" rows="1" cols="50">
-                </textarea>
-                
-                <br><br>
-                
-                <label for="main-text">Main Text: </label>
-                <textarea id="main-text" name="main-text" rows="4" cols="50">
-                </textarea>
-                
-                <br><br>
-                
-                <label for="related-aids">Related Research Aids: </label>
-                <input type="text" id="related-aids" name="related-aids" onkeyup="relatedAidsSuggestions()" value=""><br>
-                <!-- <datalist id="place-suggestions"></datalist> -->
-                <select name="relation type" id="rel-type">
-                  <option value="see also">see also</option>
-                  <option value="broader">broader</option>
-                  <option value="narrower">reviewer</option>
-                  <option value="other">other</option>
+
+        <div class="section" id="basic-info">
+        <!-- <div>
+          <h3>Language:</h3>              
+          <select name="language" id="language" onchange="fillTitles();fillRelatedRAs();">
+                <option value="English">English</option>
+                <option value="Dutch">Nederlands</option>
+          </select>
+        </div> -->
+        <div>
+          <table>
+            <tr> 
+              <td><h3>Language:</h3></td>
+              <td>
+                <select name="language" id="language" onchange="fillTitles();fillRelatedRAs();">
+                  <option value="English">English</option>
+                  <option value="Dutch">Nederlands</option>
                 </select>
-                <input type="button" id="add-related-aid" name="related-aids" onclick="addRelatedAid" value="+">
-                <dev id="related-aids-suggestions"></dev>
+              </td>
+            </tr>
+            <tr>
+              <td><h3>Level:</h3></td>
+              <td>
+                <select name="level" id="level" onchange="displayLevelForm(); fillTitles();">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </td>
+            </tr>
+            <tr>           
+              <td><h3>Title:</h3></td>
+              <td>
+                  <input list="matching-RAs" type="text" id="title" name="title" value="" onchange="changeTitle(this.value)">
+                  <datalist id="matching-RAs">
+                  </datalist>
+                  <div id="title-notice"></div>
+  
+              </td>
+              <td>
+                <button type="button" onclick="autofill()">fill values</button>
+              </td>
+            </tr>
+          </table>      
+        </div>
+        </div>
+        <hr>
+        <div class="section" id="text-info">
+          <h3>Abstract</h3>
+          <div class="mde" id="abstract-commandbar"></div>
+          <div class="mde text-box" id="abstract"></div>
+          <script>
+            var tinyMDE1 = new TinyMDE.Editor({element: 'abstract', content:""});
+            var commandBar1 = new TinyMDE.CommandBar({element: 'abstract-commandbar', editor: tinyMDE1});
+          </script>
+          <!-- <textarea id="abstract" name="abstract" rows="2" cols="50">
+          </textarea> -->
+          <h3>Main Text</h3>
+          <!-- <textarea id="main-text" name="abstract" rows="6" cols="50">
+          </textarea> -->
+          <div class="mde" id="main-text-commandbar"></div>
+          <div class="mde text-box" id="main-text"></div>
+          <script>
+            var tinyMDE2 = new TinyMDE.Editor({element: 'main-text', content:""});
+            var commandBar2 = new TinyMDE.CommandBar({element: 'main-text-commandbar', editor: tinyMDE2});
+          </script>
 
-                <br><br>
+          <!-- <div class="mde" id="main-text-commandbar"></div>
+          <div class="mde" id="main-text-container">
+            <textarea class="mde" id="main-text" rows="20" cols="50" onkeyup="test()">
+            </textarea>
+          </div>    
+          <script>
+            var mainMDE = new TinyMDE.Editor({textarea: 'main-text', content:""});
+            var mainCommandbar = new TinyMDE.CommandBar({element: 'main-text-commandbar', editor: mainMDE});
+          </script>
+          <div id="test"></div> -->
+        </div>
+        <!-- <div id="main-info">
+          <iframe id="level-1" src="level1.html" style="display: none"
+            width="100%" frameBorder="0" scrolling="no"></iframe>
+          <iframe id="level-2" src="level2.html" style="display: none"
+            width="100%" frameBorder="0" scrolling="no"></iframe>
+          <iframe id="level-3" src="level3.html" style="display: none"
+            width="100%" frameBorder="0" scrolling="no"></iframe>
+        </div> -->
+        <hr>
+        <div class="section">
+          <h3>Related RAs</h3>
+          <div>
+          <table>
+            <tr><td>Related Aid name:</td> <td>Relationship:</td> <td></td></tr>
+            <tr>
+              <td>
+                <!-- <input list="matching-related-RAs" type="text" id="related-aid-name" name="related-aid-name" > -->
+                <!-- <datalist id="matching-related-RAs">
+                </datalist> -->
+                <select id="related-aid-name" name="related-aid-name">
+                  
+                </select>
 
-                <label for="copyright">Copyright by:</label>
-                <input type="text" id="copyright" name="copyright">
+              </td>
+              <td>
+                <select name="related-aid-relationship" id="related-aid-relationship">
+                    <option value="see also">see also</option>
+                    <option value="narrower">narrower</option>
+                    <option value="broader">broader</option>
+                </select>
+                </td>
+              <td>
+                <input type="button" value="add RA" id="related-aid-add" onclick="createListElement('related-aid-list', createRelatedRA())">
+              </td>
+            </tr>
+          </table>
+          <ol id="related-aid-list">
+              <!-- <li class="drag-element" draggable="true">
+                   
+              </li>
+              <li class="drag-element" draggable="true">
+                  
+              </li> -->
+          </ol>
+          </div>
+        </div>
+
+        <hr>
+        
+        <div class="section level2 level3" id="relevant-data">
+          <h3>Relevant Data</h3>
+          <div id="activity-period">
+              <span>Start of activity: <input id="activity-start" type="number" min="0000" max="2027" step="1" value="hallo"/></span>
+              <span>End of activity: <input id="activity-end" type="number" min="0000" max="2027" step="1" value=""/></span>
+          </div>
+          
+          <div class="tab" id="relevant-data-container">
+            <div class="tabs-header">
+              <button class="tablinks" contenteditable="true" id="relevant-data-geo" onclick="tab_display(this.id, 'relevant-data-container');">
+                Geographical
+              </button>
+              <button class="tablinks" id="relevant-data-names" onclick="tab_display(this.id, 'relevant-data-container');">
+                Name variants
+              </button>
+              <button class="tablinks" id="relevant-data-identifiers" onclick="tab_display(this.id, 'relevant-data-container');">
+                  Identifiers
+              </button>
+            </div>
+            
+            <div class="tabs-body" id="relevant-data-geo-body" >
+              <div><p>GeoNames Search:</p><input type="text" onchange="geonames()"></div>
+              <div id="geonames-suggestions">
+                list of results from GeoNames / add button per item
+              </div>
+              <p>Added GeoNames:</p>
+              <ol id="geo-list"></ol>
+            </div>
+            <div class="tabs-body" id="relevant-data-names-body">
+              <span>Name variant:</span><input id="relevant-data-names-input" type="text">              
+              <button type="submit" value="add name" id="relevant-data-names-add" onclick="createListElement('names-list', createName());">add name</button>
+              <ol id="names-list"></ol>
+            </div>
+            <div class="tabs-body" id="relevant-data-identifiers-body">
+              <span>Identifier:</span><input id="relevant-data-indentifiers-input" type="text">              
+              <button type="submit" value="add Identifier" id="relevant-data-indentifiers-add" onclick="createListElement('identifiers-list', createIdentifier());">add identifier</button>
+              <ol id="identifiers-list"></ol>
+            </div>
+          </div>
+
+        <hr>
+
+        </div>
+        
+
+        <div class="section level2 level3" id="sources">
+          <h3>Sources</h3>
+          <div>
+            <select id="is-primary-source">
+              <option value="primary">Primary</option>
+              <option value="secondary">Secondary</option>
+            </select>
+            <span>Type of Source</span><input id="sources-type" type="text" list="source-type-list">
+                <datalist id="source-type-list">
+                  <option value="Archive">
+                  <option value="Article">
+                  <option value="Book">
+                  <option value="Correspondence">
+                  <option value="Dissertation">
+                  <option value="Oration">
+                  <option value="Treatises">
+                  <option value="Website">
+                </datalist>
+              <span>Name</span><input id="sources-name" type="text">
+              <div>
+                <span>Link</span>
+                <input type="text" id="sources-links" list="link-type-list">
+                <datalist id="link-type-list">
+                  <option value="ISBN">
+                  <option value="OCLC">
+                  <option value="URL">
+                </datalist>
+              </div>
+              <span>Description & Remarks</span>
+              <div class="mde" id="sources-commandbar"></div>
+              <div class="mde text-box" id="sources-description"></div>
+              <script>
+                var tinyMDE3 = new TinyMDE.Editor({element: 'sources-description', content:""});
+                var commandBar3 = new TinyMDE.CommandBar({element: 'sources-commandbar', editor: tinyMDE3});
+              </script>
+              <button type="submit" value="add Source" id="sources-add" onclick="addSource()">add source</button>
+
+          </div>
+
+
+          
+          <div class="tab" id="sources-container">
+            <div class="tabs-header">
+              <button class="tablinks" id="sources-primary" onclick="tab_display(this.id, 'sources-container');">
+                Primary
+              </button>
+              <button class="tablinks" id="sources-secondary" onclick="tab_display(this.id, 'sources-container');">
+                Secondary
+              </button>
+            </div>
+            
+            <div class="tabs-body" id="sources-primary-body" >
+              <ol id="sources-primary-list"></ol>
+            </div>
+            <div class="tabs-body" id="sources-secondary-body">
+              <ol id="sources-secondary-list"></ol> 
+            </div>
+          </div>
+        <hr> 
+
+        </div>
+        
+        <div class="section" id="meta-info">
+          <h4>Copyright information</h4>
+
+          <div>
+            <table>
+              <tr><td>Copyright holder:</td> <td>Date:</td> <td>License:</td></tr>
+              <tr>
+                <td>
+                  <input type="text" id="copyright" name="copyright">
+                </td>
+                <td>
                 <input type="date" id="copyright-time" name="copyright-time">
+                  </td>
+                <td>
                 <input type="text" id="copyright-license" name="copyright-license">
-            </form>
+                  </td>
+              </tr>
+            </table>
+            <br><br>
+  
+            <h4>Edit history</h4>
+            <table>
+              <tr><td>Editor:</td> <td>Date:</td> <td>Editor role:</tr>
+              <tr>
+                <td>
+                  <input type="text" id="editor" name="editor" value="" defaultValue="">
+                </td>
+                <td><input type="date" id="edit-time" name="edit-time"></td>
+                <td>
+                  <select name="edit-role" id="edit-role">
+                    <option value="original_author">original author</option>
+                    <option value="translator">transator</option>
+                    <option value="reviewer">reviewer</option>
+                    <option value="other">other</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
-        <div id="form-lvl-2" class="form">
-            <h2>Level 2</h2>
-            <form>
-                <label for="place">Place: </label>
-                <input type="text" id="place" name="place" onkeyup="geonamesSuggestions()" value=""><br>
-                <!-- <datalist id="place-suggestions"></datalist> -->
-                <dev id="geonames-suggestions"></dev>
-                <br><br>
-                
-            </form>
+
+        <hr>
+
+        <div id="form-footer">
+          <div id="preview-button">
+            <button class="submit-button" type="button" onclick="preview()">preview</button>
+          </div>
+          <div id="submit">
+            <button class="submit-button" type="submit" onclick="submit()">submit</button>
+          </div>
         </div>
-        <div id="form-lvl-3" class="form">
-            <h2>Level 3</h2>
-            <form>
-                <label for="place">Place: </label>
-                <input type="text" id="place" name="place" onkeyup="geonamesSuggestions()" value=""><br>
-                <!-- <datalist id="place-suggestions"></datalist> -->
-                <dev id="geonames-suggestions"></dev>
-                <br><br>
-                
-            </form>
-        </div>
-        <br>
-        <div>
-            <form>
-                <label for="edit">Edit Info: </label>
-                <input type="text" id="editor" name="editor">
-                <input type="date" id="edit-time" name="edit-time">
-                <select name="edit-role" id="edit-role">
-                  <option value="original_author">original author</option>
-                  <option value="translator">transator</option>
-                  <option value="reviewer">reviewer</option>
-                  <option value="other">other</option>
-                </select>
-            </form>
-        </div>
-        <br>
-        <div>
-            <input type="button" id="submit" name="submit" value="Submit" onclick="submitForm()">
-        </div>
+      </div>
+
+
+      <div id="rhs">
+      </div>
+      <!-- <div>
+        <h2><u>PULL ACTIONS</u></h2>
+        <h4>List RAs -> list of titles (& file paths, etc)</h4>
+        <h4>get RA content -> auto-fill fields</h4>
+
+
+        <h2><u>PUSH ACTIONS</u></h2>
+        <h4>commit changes</h4>
+        <h4></h4>
+
+
+        <h2><u>CHECK ACTIONS</u></h2>
+        <h4>validate field contents</h4>
+        <h4></h4>
+      </div> -->
     </main>
+    
   </body>
-</html>
-
-
