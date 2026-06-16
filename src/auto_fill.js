@@ -33,6 +33,29 @@ function autofill() {
       // document.getElementById("edit-role").value = d.role;
       createListElement("edits-list", createEdit(d.author, d.date.toISOString().substr(0, 10), d.role))
     }
+
+
+    if (level > 1) {
+      document.getElementById("activity-start").value = curRA["Relevant data"]["Period of activity"]["Year of start"];
+      document.getElementById("activity-end").value = curRA["Relevant data"]["Period of activity"]["Year of end"];
+
+    }
+}
+
+
+function clearall() {
+  tinyMDE1.setContent("");
+  tinyMDE2.setContent("");
+
+  clearList("related-aid-list");
+  clearList("sources-primary-list");
+  clearList("sources-secondary-list");
+  clearList("edits-list");
+  // var copyright_meta = curRA["copyright_metadata"];
+  document.getElementById("copyright").value = "";
+  var today = new Date();
+  document.getElementById("copyright-time").value = today.toISOString().substr(0, 10);  
+  document.getElementById("copyright-license").value = "";
 }
 
 

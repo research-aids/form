@@ -94,6 +94,11 @@ function removeListElem(buttonElem) {
 }
 
 
+function clearList(listId) {
+  document.getElementById(listId).innerHTML = "";
+}
+
+
 listCounters = {};
 
 function createListElement(listId, elementInnerHTML) {
