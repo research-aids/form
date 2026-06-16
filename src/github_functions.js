@@ -74,7 +74,7 @@ async function listAll() {
   }
   d = new Date();
   time = d.getTime() - time;
-  alert(`that took ${time/1000} seconds`);
+  // alert(`that took ${time/1000} seconds`);
 }
 
 

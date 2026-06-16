@@ -81,11 +81,12 @@ async function init() {
     tab_display("sources-primary", "sources-container");
   
 
-  
+    document.getElementById("loading").innerHTML = "<i style='color:red'>loading...</i>";
     var pwd = "ResearchAids@NIOD!";
     octokit = await decrypt_token(pwd);
     await listAll();
-    
+    document.getElementById("loading").innerHTML = "";
+
     
     fillTitles();
     fillRelatedRAs();
