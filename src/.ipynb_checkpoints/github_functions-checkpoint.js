@@ -40,48 +40,68 @@ async function decrypt_token(pwd) {
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
-async function listRAs(level, language){
+async function listRAs(ispublished, level, language){
     // var octokit = await getOctokit();
     // var langEN = (language == 'English') ? 'English' : 'Dutch'; 
-    var path = `published/niveau${level}/${language}/`
-    var folderContents = await octokit.request('GET /repos/colonial-heritage/research-aids/contents/'+path, 
-                                               {
-                                                    owner: 'OWNER',
-                                                    repo: 'research-aids',
-                                                    path: path,
-                                                    headers: {
-                                                      'X-GitHub-Api-Version': '2022-11-28'
-                                                    }
-                                                }
-                                              );
-    console.log(folderContents);
-    return folderContents.data;
+    var path = `${ispublished}/niveau${level}/${language}/`
+
+    try {
+      var folderContents = await octokit.request('GET /repos/colonial-heritage/research-aids/contents/'+path, 
+                                                 {
+                                                      owner: 'OWNER',
+                                                      repo: 'research-aids',
+                                                      path: path,
+                                                      headers: {
+                                                        'X-GitHub-Api-Version': '2022-11-28'
+                                                      }
+                                                  }
+                                                );
+      console.log(folderContents);
+      return folderContents.data;
+    } catch(err) {
+      console.log(`${path} lead to ${err}`);
+      return [];
+    }
 }
 
 async function listAll() {
   var d = new Date();
   var time = d.getTime();
-  for (const lang of ["English", "Dutch"]) {
-    for (const lvl of ["1", "2", "3"]) {
-      var cur = await listRAs(lvl, lang);
-      for (const fileObj of cur) {
-        var RAContents = await getRAContents(lvl, lang, fileObj.name);
-        
-        RAs[lang][lvl][RAContents.Title] = RAContents;
+
+  const progressBar = document.getElementById('progress');
+  const progressText = document.getElementById('progressText');
+  var total = 100;
+  var i = 0;
+  for (const lang of langs) {
+    for (const f of folders) {
+      for (const lvl of levels) {
+        var cur = await listRAs(f, lvl, lang);
+        for (const fileObj of cur) {
+            var RAContents = await getRAContents(f, lvl, lang, fileObj.name);
+            
+            RAs[lang][f][lvl][RAContents.Title] = RAContents;
+
+          
+            // const percent = ((i + 1) / total) * 100;
+            // progressBar.style.width = percent + '%';
+            // progressText.textContent = Math.round(percent) + '%';
+            // i += 5;
+        }
       }
     }
-    // alert(`level ${lvl} done`); 
+      // alert(`level ${lvl} done`); 
   }
-  d = new Date();
-  time = d.getTime() - time;
+  
+  // d = new Date();
+  // time = d.getTime() - time;
   // alert(`that took ${time/1000} seconds`);
 }
 
 
 
-async function getRAContents(level, lang, fileName) {
-    var filePath = `published/niveau${level}/${lang}/${fileName}`;
-    var file = await octokit.request('GET /repos/colonial-heritage/research-aids/contents/'+filePath, {
+async function getRAContents(ispublished, level, lang, fileName) {
+    var filePath = `${ispublished}/niveau${level}/${lang}/${fileName}`;
+    var file = await octokit.request('GET /repos/colonial-heritage/research-aids/contents/'+encodeURIComponent(filePath), {
           owner: 'OWNER',
           repo: 'research-aids',
           path: filePath,
@@ -110,6 +130,13 @@ async function getRAContents(level, lang, fileName) {
     // js-yaml is imported in the HTML
     var RAContent = jsyaml.load(rawYAMLString);
 
+    var filedata = {};
+    filedata["folder"] = ispublished;
+    filedata["filename"] = encodeURIComponent(fileName);
+    filedata["filepath"] = filePath;
+    // filedata["sha"] = file.data.sha;
+    RAContent["fileinfo"] = filedata;
+
     return RAContent;
 }
 
@@ -121,7 +148,7 @@ async function getRAContents(level, lang, fileName) {
 
 
 function getBlob(text) {
-    var data = new Blob([text], {type: 'text/plain'});
+    var data = new Blob([text], {type: 'text/yaml;charset=utf-8'});
 
     // If we are replacing a previously generated file we need to
     // manually revoke the object URL to avoid memory leaks.
@@ -136,13 +163,27 @@ function getBlob(text) {
 }
 
 
-async function uploadToGithub(title, text) {
-    var filename = `${title}.yml`.replace(/\s+/g, "").replace(/^\.+|\.+$/g, "");
-    var response = await octokit.request(`PUT /repos/valevo/form-auto-commit-test/contents/${filename}`, {
-                              owner: 'valevo',
-                              repo: 'form-auto-commit-test',
+async function uploadToGithub(filename, text) {
+    try {
+      var orig_file = await octokit.request(`GET /repos/colonial-heritage/research-aids/contents/${filename}`, {
+            owner: 'OWNER',
+            repo: 'research-aids',
+            path: filename,
+            headers: {
+              'X-GitHub-Api-Version': '2022-11-28'
+            }
+          });
+      var sha = orig_file.data.sha;
+    } catch {
+      var sha = "";
+    }
+    // var filename = `${title}.yml`.replace(/\s+/g, "").replace(/^\.+|\.+$/g, "");
+    var response = await octokit.request(`PUT /repos/colonial-heritage/research-aids/contents/${filename}`, {
+                              owner: 'colonial-heritage',
+                              repo: 'research-aids',
                               path: filename,
                               message: 'first commit by Octokit',
+                              sha: sha,
                               committer: {
                                 name: 'vale',
                                 email: 'valevogelmann@gmail.com'
@@ -152,5 +193,6 @@ async function uploadToGithub(title, text) {
                                 'X-GitHub-Api-Version': '2022-11-28'
                               }
                             });
+      
     return response;
 }

@@ -101,7 +101,7 @@ function clearList(listId) {
 
 listCounters = {};
 
-function createListElement(listId, elementInnerHTML) {
+function createListElement(listId, elementInnerHTML, storage_function) {
 
     if (!(listId in listCounters)) {
       listCounters[listId] = 0;
@@ -139,6 +139,9 @@ function createListElement(listId, elementInnerHTML) {
     listCounters[listId] += 1;
 }
 
+
+
+relatedRAs = {};
 
 function createRelatedRA(name, rel) {
     // var name = document.getElementById("related-aid-name").value;

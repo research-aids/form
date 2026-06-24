@@ -1,9 +1,11 @@
 function autofill() {
-    var level = document.getElementById("level").value;
     var lang = document.getElementById("language").value;
+    var folder = document.getElementById("folder").value;
+    var level = document.getElementById("level").value;
     var title = document.getElementById("title").value;
     
-    var curRAs = RAs[lang][level];
+    
+    var curRAs = RAs[lang][folder][level];
     
     if (!(title in curRAs)) {
         return;
@@ -67,8 +69,8 @@ function clearall() {
 }
 
 
-function assembleRA() {
-  var abstract = tinyMDE1.getContent();
-  var main_text = tinyMDE2.getContent();
+// function assembleRA() {
+//   var abstract = tinyMDE1.getContent();
+//   var main_text = tinyMDE2.getContent();
 
-}
+// }

@@ -28,10 +28,33 @@
   <body onload="init()">
     <!-- https://www.w3schools.com/css/css_tooltip.asp -->
     <main>
+      <div popover id="pwd">
+        <h2>Welcome!</h2>
+        <p id="test">First, please enter the password that has been provided to you: </p>
+        <p>
+          <input type="text" name="pwd" id="pwd-value" >
+          <button id="setup-button" onclick="setup_repo()">Decrypt token</button>
+        </p>
+        <p id="loading">The password is needed to continue</p>
+        <!-- <div style="width: 100%; background: white; border-radius: 4px; overflow: hidden; height: 30px;">
+          <div id="progress" style="width: 0%; background: #ccccff; height: 100%; transition: width 0.3s; display: flex; align-items: center; justify-content: center;">
+          <span id="progressText" style="color: white; font-weight: bold; font-size: 12px;"></span>
+          </div>
+        </div> -->
+        <hr><br>
+        <p>You're likely here as a guest, an external contributor to the Research Aids. In that case, simply click the button below and get started. </p>
+        <button popovertarget="pwd" popovertargetaction="hide"
+          onclick="presetVisitor()">Get started</button><br>
+        <br><br>
+        <p>If you want the full range of options because you know what you're doing, then click <button popovertarget="pwd" popovertargetaction="hide">here</button> instead. </p>
+      </div>
+      
+
+  <!-- <button popovertarget="mydiv">Click me!</button> -->
+
+      
       <div id="lhs">
         <h1>Research Aid Form</h1>
-        <span id="loading"></span>
-
         <div class="section" id="basic-info">
         <!-- <div>
           <h3>Language:</h3>              
@@ -42,7 +65,7 @@
         </div> -->
         <div>
           <table>
-            <tr> 
+            <tr id="language-container"> 
               <td><h3>Language:</h3></td>
               <td>
                 <select name="language" id="language" onchange="fillTitles();fillRelatedRAs();">
@@ -51,13 +74,22 @@
                 </select>
               </td>
             </tr>
-            <tr>
+            <tr id="folder-container"> 
+              <td><h3>Folder:</h3></td>
+              <td>
+                <select name="folder" id="folder" onchange="fillTitles();">
+                  <option value="published">published</option>
+                  <option value="review">review</option>
+                </select>
+              </td>
+            </tr>
+            <tr id="level-container">
               <td><h3>Level:</h3></td>
               <td>
-                <select name="level" id="level" onchange="displayLevelForm(); fillTitles();">
+                <select name="level" id="level" onchange="displayLevelForm(); fillTitles('review');">
                   <option value="1">1</option>
                   <option value="2">2</option>
-                  <option value="3">3</option>
+                  <option value="3" selected="selected">3</option>
                 </select>
               </td>
             </tr>
