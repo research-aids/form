@@ -84,10 +84,6 @@ function defaultToday(curElement) {
 
 
 async function setup_repo(pwd) {
-    // alert("clicked!");
-    // var pwd = "ResearchAids@NIOD!";
-    // document.getElementById("loading").innerHTML = "loading";
-
     var pwd = document.getElementById("pwd-value").value;
     octokit = await decrypt_token(pwd);
 
