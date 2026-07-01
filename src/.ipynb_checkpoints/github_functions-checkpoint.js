@@ -29,6 +29,7 @@ async function decrypt_token(pwd) {
   
   if (! decrypted.startsWith("ghp_")) {
       alert("Decrypted token doesn't look like a valid GitHub token! Are you sure the password is correct?");
+      return false;
   } else {
     return await getOctokit(decrypted);
   }
@@ -131,7 +132,7 @@ async function getRAContents(ispublished, level, lang, fileName) {
     // var rawYAMLString = atob(file.data.content).replace('\r', '');
     var rawYAMLString = decodeBase64(file.data.content).replace('\r', '');
     // js-yaml is imported in the HTML
-    var RAContent = jsyaml.load(rawYAMLString);
+    var RAContent = jsyaml.load(rawYAMLString, {schema: jsyaml.JSON_SCHEMA});
 
     var filedata = {};
     filedata["folder"] = ispublished;
@@ -166,6 +167,13 @@ function getBlob(text) {
 }
 
 
+function utf8ToBase64(str) {
+  const bytes = new TextEncoder().encode(str); // proper UTF-8 bytes
+  let binary = '';
+  bytes.forEach((b) => { binary += String.fromCharCode(b); });
+  return btoa(binary);
+}
+
 async function uploadToGithub(filename, text) {
     try {
       var orig_file = await octokit.request(`GET /repos/colonial-heritage/research-aids/contents/${filename}`, {
@@ -185,13 +193,13 @@ async function uploadToGithub(filename, text) {
                               owner: 'colonial-heritage',
                               repo: 'research-aids',
                               path: filename,
-                              message: 'first commit by Octokit',
+                              message: 'auto-commit by Octokit from the RA form (https://research-aids.github.io/form/), maintained by @valevo',
                               sha: sha,
                               committer: {
                                 name: 'vale',
                                 email: 'valevogelmann@gmail.com'
                               },
-                              content: btoa(text),
+                              content: utf8ToBase64(text),
                               headers: {
                                 'X-GitHub-Api-Version': '2022-11-28'
                               }

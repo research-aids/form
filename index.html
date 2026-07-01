@@ -38,7 +38,7 @@
           <button id="setup-button" onclick="setup_repo()">Decrypt token</button>
         </p>
         <!-- <p id="loading">The password is needed to continue</p> -->
-        <div style="border: 2px solid white; margin: 0 auto; width: 66%; background: white; border-radius: 4px; overflow: hidden; height: 30px;">
+        <div id="progressContainer" hidden style="border: 2px solid white; margin: 0 auto; width: 66%; background: white; border-radius: 4px; overflow: hidden; height: 30px;">
           <div id="progress" style="width: 0%; background: #ccccff; height: 100%; transition: width 0.3s; display: flex; align-items: center; justify-content: center;">
           <span id="progressText" style="color: white; font-weight: bold; font-size: 20px;"></span>
           </div>
@@ -48,7 +48,7 @@
         <button id="get-started" popovertarget="pwd" popovertargetaction="hide"
           onclick="presetVisitor()" disabled>Get started</button><br>
         <br><br>
-        <p>If you want the full range of options because you know what you're doing, then click <button id="full-options" popovertarget="pwd" popovertargetaction="hide" disabled>here</button> instead. </p>
+        <p>If you want the full range of options because you know what you're doing, then click <button id="full-options" popovertarget="pwd" popovertargetaction="hide" onclick="presetNormal()" disabled>here</button> instead. </p>
       </div>
       
 

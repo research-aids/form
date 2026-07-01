@@ -87,8 +87,10 @@ async function setup_repo(pwd) {
     var pwd = document.getElementById("pwd-value").value;
     octokit = await decrypt_token(pwd);
 
-    document.getElementById("setup-button").disabled = true;
-
+    if (octokit) {
+      document.getElementById("setup-button").disabled = true;
+      document.getElementById("progressContainer").hidden = false;
+    }
 }
 
 
@@ -126,8 +128,6 @@ async function init() {
     document.getElementById("full-options").disabled = false;
   
   
-    fillTitles("review");
-    fillRelatedRAs();
 
 
     var copyright_Date = document.getElementById("copyright-time");
@@ -137,14 +137,22 @@ async function init() {
     edit_Date.value = today.toISOString().substr(0, 10);
 }
 
-function presetVisitor() {
-  document.getElementById("language").value = "Dutch";
-  document.getElementById("folder").value = "review";
-  document.getElementById("level").value = "3";
+function presetNormal() {
+    fillTitles();
+    fillRelatedRAs();
+}
 
-  document.getElementById("language-container").style.display = "none";
-  document.getElementById("folder-container").style.display = "none";
-  document.getElementById("level-container").style.display = "none";
+function presetVisitor() {
+    document.getElementById("language").value = "Dutch";
+    document.getElementById("folder").value = "review";
+    document.getElementById("level").value = "3";
+  
+    document.getElementById("language-container").style.display = "none";
+    document.getElementById("folder-container").style.display = "none";
+    document.getElementById("level-container").style.display = "none";
+  
+    fillTitles();
+    fillRelatedRAs();
 }
 
 
@@ -161,29 +169,29 @@ function presetVisitor() {
 // }
 
 
-// function changeTitle(curtitle) {
-//     var lang = document.getElementById("language").value;
-//     var folder = document.getElementById("folder");
-//     var level = document.getElementById("level").value;
-//     var title = document.getElementById("title").value;
-//     var notice = document.getElementById("title-notice");
+function changeTitle(curtitle) {
+    var lang = document.getElementById("language").value;
+    var folder = document.getElementById("folder").value;
+    var level = document.getElementById("level").value;
+    var title = document.getElementById("title").value;
+    var notice = document.getElementById("title-notice");
 
-//     if (title.length < 3) {
-//         notice.innerHTML = "";
-//         return;
-//     }
+    if (title.length < 3) {
+        notice.innerHTML = "";
+        return;
+    }
 
-//     // nothing really needs to happen here
+    // nothing really needs to happen here
   
-//     if (title in RAs[lang][folder][level]) {
+    if (title in RAs[lang][folder][level]) {
         
-//         // var curRA = RAs[[level, lang]][title];
-//         notice.innerHTML = "";
-//     } else {
-//         // RAs[[level, lang]][title] = {};
-//         notice.innerHTML = `<i> "${title}" is not an existing Research Aid. A new one will be created upon submission!</i>`;
-//     }   
-// }
+        // var curRA = RAs[[level, lang]][title];
+        notice.innerHTML = "";
+    } else {
+        // RAs[[level, lang]][title] = {};
+        notice.innerHTML = `<i> "${title}" is not an existing Research Aid. A new one will be created upon submission!</i>`;
+    }   
+}
 
 
 // function autofill() {
@@ -220,7 +228,7 @@ async function submit() {
 
     var [RAObj, path] = collect_data();
     path = path.replace("/published/", "/review/");
-    var yamlStr = jsyaml.dump(RAObj, {quotingType: '"'});
+    var yamlStr = jsyaml.dump(RAObj, {quotingType: '"', schema: jsyaml.JSON_SCHEMA});
     
 
     

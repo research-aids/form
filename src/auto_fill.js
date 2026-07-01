@@ -25,7 +25,7 @@ function autofill() {
 
     var copyright_meta = curRA["copyright_metadata"];
     document.getElementById("copyright").value = copyright_meta["copyright_holder"];
-    document.getElementById("copyright-time").value = copyright_meta["date"].toISOString().substr(0, 10);;
+    document.getElementById("copyright-time").value = copyright_meta["date"];//.toISOString().substr(0, 10);;
     document.getElementById("copyright-license").value = copyright_meta["license"];
 
     var edit_history = curRA["editing_metadata"];
@@ -33,7 +33,8 @@ function autofill() {
       // document.getElementById("editor").value = d.author;
       // document.getElementById("edit-time").value = d.date;
       // document.getElementById("edit-role").value = d.role;
-      createListElement("edits-list", createEdit(d.author, d.date.toISOString().substr(0, 10), d.role))
+      createListElement("edits-list", createEdit(d.author, d.date,//.toISOString().substr(0, 10),
+                                                 d.role))
     }
 
 
