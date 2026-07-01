@@ -63,12 +63,12 @@ function getRelevantData(level) {
         
         var names = [];
         document.querySelectorAll('#names-list .one').forEach(
-          (li_div) => {names.push(liv_div.dataset.name}
+          (li_div) => {names.push(liv_div.dataset.name)}
         );
 
         var ids = [];
         document.querySelectorAll('#identifiers-list .one').forEach(
-          (li_div) => {ids.push(liv_div.dataset.identifier}
+          (li_div) => {ids.push(liv_div.dataset.identifier)}
         );
       
     
