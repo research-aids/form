@@ -41,46 +41,6 @@ function handleDragend() {
   draggedElement = null;
 }
 
-// related_RA_counter = 0
-// related_RAs = {}
-
-// function createRelatedRA() {
-//     var name = document.getElementById("related-aid-name").value;
-//     var rel = document.getElementById("related-aid-relationship").value;
-
-//     if (name.trim().length < 1) {
-//       alert("The name field was empty! Please provide a name");
-//       return;
-//     }
-//     var listElem = document.createElement("li");
-//     listElem.id = `${name}-${rel}-${related_RA_counter}`;
-  
-//     listElem.innerHTML = `<p class="one"><b>${name}</b><i>${rel}</i></p>
-//     <p class="two">
-//       <button type="button" class="remove-btn" onclick="removeRelatedRA(this)">
-//         <span class="glyphicon glyphicon-remove"></span>
-//       </button>
-//     </p>`;
-//       //   <button type="button" class="remove-btn" onclick="editRelatedRA(this)">
-//       //   <span class="glyphicon glyphicon-pencil"></span>
-//       // </button>
-
-//     listElem.setAttribute('draggable', true);
-//     listElem.classList.add("drag-element");
-
-//     listElem.addEventListener("dragstart", handleDragstart);
-//     listElem.addEventListener("dragover", handleDragover);
-//     listElem.addEventListener("dragleave", handleDragleave);
-//     listElem.addEventListener("drop", handleDrop);
-    
-//     var relatedList = document.getElementById("related-aid-list");
-//     relatedList.appendChild(listElem);
-
-//     related_RA_counter += 1;
-//     var cur_RA = {"name": name, "relation": rel};
-//     related_RAs[listElem.id] = cur_RA;
-  
-// }
 
 function removeListElem(buttonElem) {
     // const relatedList = document.getElementById("related-aid-list");
@@ -97,6 +57,16 @@ function removeListElem(buttonElem) {
 function clearList(listId) {
   document.getElementById(listId).innerHTML = "";
 }
+
+
+function clearElement(elem) {
+  if (typeof variable !== 'undefined' && variable !== null){
+    while (options.firstChild) {
+      options.removeChild(options.firstChild);
+    }
+  }
+}
+
 
 
 listCounters = {};
@@ -143,7 +113,7 @@ function createListElement(listId, elementInnerHTML, storage_function) {
 
 relatedRAs = {};
 
-function createRelatedRA(name, rel) {
+function createRelatedRA(name, rel, path) {
     // var name = document.getElementById("related-aid-name").value;
     // var rel = document.getElementById("related-aid-relationship").value;
 
@@ -158,28 +128,30 @@ function createRelatedRA(name, rel) {
     // related_RAs[listElem.id] = cur_RA;
 
   
-    return `<p class="one"><b>${name}</b><i>${rel}</i></p>
-    <p class="two">
+    return `<div class="one" data-path="${path}" data-name="${name}" data-relation="${rel}"><b>${name}</b></div><div class="three"><i>${rel}</i></div>
+    <div class="two">
       <button type="button" class="remove-btn" onclick="removeListElem(this)">
         <span class="glyphicon glyphicon-remove"></span>
       </button>
-    </p>`;
+    </div>`;
 }
 
 function createRelatedRAFromHTML() {
-    var name = document.getElementById("related-aid-name").value;
+    var select = document.getElementById('related-aid-name');
+    var selected_path = select.options[select.selectedIndex].dataset.path;
+
     var rel = document.getElementById("related-aid-relationship").value;
-    return createRelatedRA(name, rel);
+
+
+    return createRelatedRA(select.value, rel, selected_path);
 
 }
 
-function createGeo() {
-  
-}
+
 
 function createIdentifier() {
   var ident = document.getElementById("relevant-data-indentifiers-input").value;
-  return `<p class="one"><b>${ident}</b></p>
+  return `<p class="one" data-identifier="${ident}"><b>${ident}</b></p>
       <p class="two">
         <button type="button" class="remove-btn" onclick="removeListElem(this)">
           <span class="glyphicon glyphicon-remove"></span>
@@ -189,13 +161,32 @@ function createIdentifier() {
 
 function createName() {
   var name = document.getElementById("relevant-data-names-input").value;
-  return `<p class="one"><b>${name}</b></p>
+  return `<p class="one" data-name="${name}"><b>${name}</b></p>
       <p class="two">
         <button type="button" class="remove-btn" onclick="removeListElem(this)">
           <span class="glyphicon glyphicon-remove"></span>
         </button>
       </p>`;
 }
+
+function createGeo() {
+  
+}
+
+function createTag() {
+    var tag_label = document.getElementById("relevant-data-tag-label").value;
+    var tag_link = document.getElementById("relevant-data-tag-link").value;
+
+    return `<p class="one" 
+          data-label="${tag_label}"
+          data-link="${tag_link}"><b>${label}</b></p>
+      <p class="two">
+        <button type="button" class="remove-btn" onclick="removeListElem(this)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </p>`;
+}
+
 
 function createSource() {
   var source_type = document.getElementById("sources-type").value;
@@ -204,7 +195,11 @@ function createSource() {
   var source_description = document.getElementById("sources-description").querySelector("span");
   var source_description = (source_description && source_description !== 'null' && source_description !== 'undefined') ? source_description.innerHTML : "";
 
-  return `<p class="one"><b><span>${source_name.slice(0, 50)}</span><span style="display: none">${source_name.slice(50)}</span></b>
+  return `<p class="one"
+          data-Name="${source_name}" 
+          data-Type-of-source="${source_type}"
+          data-Name="${link}"
+  ><b><span>${source_name.slice(0, 50)}</span><span style="display: none">${source_name.slice(50)}</span></b>
             <span><i>${source_type}</i></span>
             <span style="display: none">${source_description}</span>
             <span style="display: none">${source_links}</span>
@@ -224,19 +219,25 @@ function addSource() {
 }
 
 
-function createEdit(author, date, role) {
-  return `<p class="one"><b>${author}</b><i>${role}</i><i>${date}</i></p>
-    <p class="two">
+function createEdit(author, date, role, applies_to, note) {
+  return `<div class="one" 
+  data-author="${author}" 
+  data-role="${role}" 
+  data-date="${date}"
+  data-applies_to="${applies_to}"
+  data-editing_notes="${note}"><b>${author}</b></div><div class="three"><i>${date}</i></div>
+    <div class="two">
       <button type="button" class="remove-btn" onclick="removeListElem(this)">
         <span class="glyphicon glyphicon-remove"></span>
       </button>
-    </p>`;
+    </div>`;
 }
 
 function createEditFromHTML() {
     var author = document.getElementById("editor").value;
     var date = document.getElementById("edit-time").value;
     var role = document.getElementById("edit-role").value;
-
-    return createEdit(author, date, role);
+    var applies_to = document.getElementById("edit-applies-to").value;
+    var note = document.getElementById("edit-note").value;
+    return createEdit(author, date, role, applies_to, note);
 }

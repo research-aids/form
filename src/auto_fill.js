@@ -74,3 +74,64 @@ function clearall() {
 //   var main_text = tinyMDE2.getContent();
 
 // }
+
+
+
+
+
+function fillTitles() {
+    var lang = document.getElementById("language").value;
+    var folder = document.getElementById("folder").value;
+    var level = document.getElementById("level").value;
+    // var curTitles = [];
+    var options = document.getElementById('matching-RAs');
+    options.innerHTML = "";// clearElement(options);
+
+    // var optGroup = document.createElement("optgroup");
+    // optGroup.label = `Level ${level}`;
+  
+    for (var cur_title in RAs[lang][folder][level]) {
+        var option = document.createElement('option');
+        option.value = cur_title;
+        option.innerHTML = cur_title;
+        // option.onclick = function() { alert(title); };
+        options.appendChild(option);
+    } 
+    // options.appendChild(optGroup);
+
+}
+
+function fillRelatedRAs() {
+    var lang = document.getElementById("language").value;
+    var options = document.getElementById('related-aid-name');
+    options.innerHTML = ""; //clearElement(options);
+
+    // var folders = [published, review];
+    // var folderNames = ["published", "review"];
+    // for (let i = 0; i < folder.length; i++) {
+    var curRAs = RAs[lang];
+
+    for (var folder in curRAs) {
+      // var optGroupOuter = document.createElement("optgroup");
+      // optGroupOuter.label = `${folder}`;
+
+      var cur = curRAs[folder];
+      for (var lvl in cur) {
+        var optGroup = document.createElement("optgroup");
+        optGroup.label = `Level ${lvl}`;
+  
+        for (var cur_title in cur[lvl]) {
+            var option = document.createElement('option');
+            // option.id = `${lang}/${folder}/${lvl}
+            option.dataset.path = cur[lvl][cur_title].fileinfo.filepath;
+            option.value = cur_title;
+            option.innerHTML = cur_title;
+            console.log(cur_title);
+            optGroup.appendChild(option);
+            console.log(options);
+        }
+        options.appendChild(optGroup);
+      }
+      // options.appendChild(optGroupOuter);
+    }
+}

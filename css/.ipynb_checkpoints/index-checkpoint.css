@@ -40,7 +40,8 @@ h3 {
 }
 
 [popover]::backdrop {
-  backdrop-filter: brightness(80%) blur(10px); */
+  backdrop-filter: brightness(80%) blur(10px);
+  pointer-events: none;
 }
 
 
@@ -173,3 +174,34 @@ textarea {
 }
 
 
+
+
+.edit-history-card {
+  /* background: #fff; */
+  /* border: 1px solid #e2e2e2; */
+  /* border-radius: 12px; */
+  /* padding: 1.5rem; */
+}
+
+.edit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem 1.25rem;
+  align-items: end; /* keeps button bottom-aligned with inputs */
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field button {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

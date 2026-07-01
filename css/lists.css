@@ -6,6 +6,8 @@ li {
   cursor: grab;
   padding: 1rem;
   display: flex;
+  align-items: center; /* vertical centering, optional */
+  gap: 10%;
 }
 
 li:nth-child(odd) {
@@ -19,22 +21,68 @@ li:active {
   cursor: grabbing;
 }
 
-li .one {
+
+
+/* li .one {
   flex: 70%;
-}
+  display: flex; */
+  /* flex-direction: row;
+  align-items: baseline; 
+  gap: 12px;
 
-li .one * {
+  /* display: grid;
+  grid-template-rows: 1.5em 1.5em; /* fixed height per row */
+/* } */
+
+/* li .one * {
   padding-right: 20%;
-}
+} */
 
-li .two *{
+
+/* li .one b {
+    flex: 0 0 140px;       
+  min-width: 0;          
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  flex: 0 0 140px;   
+  min-width: 0;       
+} */
+
+  /* overflow: hidden;       
+  white-space: nowrap;    
+  text-overflow: ellipsis;  */
+
+/* li .two *{
   flex: 30%;
   align: right;
-}
+} */
 
 /* li:after{
     
 } */
+
+li .one {
+  flex: 1;
+  text-align: left;
+  min-width: 0;   /* allows text to wrap/truncate instead of overflowing past the gap */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+li .three {
+  flex: 0 0 auto;  /* don't grow, don't shrink, size to content */
+}
+
+li .two {
+  flex: 1;
+  text-align: right;
+}
+
+
+
 
 
 .over {

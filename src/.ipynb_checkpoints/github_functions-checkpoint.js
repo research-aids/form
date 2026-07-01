@@ -70,7 +70,7 @@ async function listAll() {
 
   const progressBar = document.getElementById('progress');
   const progressText = document.getElementById('progressText');
-  var total = 100;
+  var total = langs.length*folders.length*levels.length;
   var i = 0;
   for (const lang of langs) {
     for (const f of folders) {
@@ -82,11 +82,14 @@ async function listAll() {
             RAs[lang][f][lvl][RAContents.Title] = RAContents;
 
           
-            // const percent = ((i + 1) / total) * 100;
-            // progressBar.style.width = percent + '%';
-            // progressText.textContent = Math.round(percent) + '%';
-            // i += 5;
         }
+        const percent = ((i + 1) / total) * 100;
+        progressBar.style.width = percent + '%';
+        progressText.textContent = Math.round(percent) + '%';
+        i += 1;
+
+        // break;
+
       }
     }
       // alert(`level ${lvl} done`); 

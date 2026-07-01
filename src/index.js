@@ -86,12 +86,12 @@ function defaultToday(curElement) {
 async function setup_repo(pwd) {
     // alert("clicked!");
     // var pwd = "ResearchAids@NIOD!";
-    document.getElementById("loading").innerHTML = "loading";
+    // document.getElementById("loading").innerHTML = "loading";
 
     var pwd = document.getElementById("pwd-value").value;
     octokit = await decrypt_token(pwd);
 
-    document.getElementById("setup-button").disabled = "true";
+    document.getElementById("setup-button").disabled = true;
 
 }
 
@@ -125,8 +125,10 @@ async function init() {
     // await setup_repo(pwd);
 
     await listAll();
-    document.getElementById("loading").innerHTML = "<i style='color:green'>done</i>";
-
+    // document.getElementById("loading").innerHTML = "<i style='color:green'>done</i>";
+    document.getElementById("get-started").disabled = false;
+    document.getElementById("full-options").disabled = false;
+  
   
     fillTitles("review");
     fillRelatedRAs();
@@ -147,86 +149,7 @@ function presetVisitor() {
   document.getElementById("language-container").style.display = "none";
   document.getElementById("folder-container").style.display = "none";
   document.getElementById("level-container").style.display = "none";
-  
-  
 }
-
-
-function clearElement(elem) {
-  if (typeof variable !== 'undefined' && variable !== null){
-    while (options.firstChild) {
-      options.removeChild(options.firstChild);
-    }
-  }
-}
-
-
-function fillTitles() {
-    var lang = document.getElementById("language").value;
-    var folder = document.getElementById("folder").value;
-    var level = document.getElementById("level").value;
-    // var curTitles = [];
-    var options = document.getElementById('matching-RAs');
-    options.innerHTML = "";// clearElement(options);
-
-    // var optGroup = document.createElement("optgroup");
-    // optGroup.label = `Level ${level}`;
-  
-    for (var cur_title in RAs[lang][folder][level]) {
-        var option = document.createElement('option');
-        option.value = cur_title;
-        option.innerHTML = cur_title;
-        // option.onclick = function() { alert(title); };
-        options.appendChild(option);
-    } 
-    // options.appendChild(optGroup);
-
-}
-
-
-
-function fillRelatedRAs() {
-    var lang = document.getElementById("language").value;
-    var options = document.getElementById('related-aid-name');
-    options.innerHTML = ""; //clearElement(options);
-
-    // var folders = [published, review];
-    // var folderNames = ["published", "review"];
-    // for (let i = 0; i < folder.length; i++) {
-    var curRAs = RAs[lang];
-
-    for (var folder in curRAs) {
-      // var optGroupOuter = document.createElement("optgroup");
-      // optGroupOuter.label = `${folder}`;
-
-      var cur = curRAs[folder];
-      for (var lvl in cur) {
-        var optGroup = document.createElement("optgroup");
-        optGroup.label = `Level ${lvl}`;
-  
-        for (var cur_title in cur[lvl]) {
-            var option = document.createElement('option');
-            option.value = cur_title;
-            option.innerHTML = cur_title;
-            console.log(cur_title);
-            optGroup.appendChild(option);
-            console.log(options);
-        }
-        options.appendChild(optGroup);
-      }
-      // options.appendChild(optGroupOuter);
-    }
-}
-
-
-  
-
-
-
-
-
-
-
 
 
 
@@ -291,139 +214,10 @@ function fillRelatedRAs() {
 
 
 
-function gather_info() {
-  var RA_html = document.getElementById("related-aid-list");
-  var ls = [];
-  for (const elem of RA_html.children) {
-    var cur_RA_info = related_RAs[elem.id];
-    ls.push(cur_RA_info);
-  }
-  return ls;
-}
-
-
-
-
-
-
-
-function assembleRA(lang, level, title) {
-    
-  
-  
-    return `Language: ${lang}
-
-Level: ${level}
-
-Title: ${title}`;
-    
-}
-
-// async function submitForm() {
-//     var level, lang, title = getBasicData();
-    
-//     // var lang = document.getElementById("language").value;
-//     // var level = document.getElementById("level").value;
-//     // var title = document.getElementById("title").value;
-
-//     var yamlStr = assembleRA(lang, level, title);
-//     var yamlBlob = getBlob(yamlStr);
-
-    
-//     var statusMessage = document.getElementById("upload-status");
-//     try {
-//         var githubResponse = await uploadToGithub(title, yamlStr);
-//         console.log(githubResponse);
-//         var a = githubResponse.data.content.html_url;
-//         statusMessage.innerHTML = `Successfully created <a href="${a}" target="_blank">${a}</a>`;
-//         statusMessage.style.color = "green";
-//     } catch {
-//         statusMessage.innerHTML = `Error creating 'niveau${level}/${lang}/${title}'!`;
-//         statusMessage.style.color = "red";
-//     }
-// }
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-function getRelatedRAs() {
-    var ls = document.getElementById("related-aid-list");
-    
-    
-}
-
-
-function createNew(lvl, title) {
-    // var lang = document.getElementById("language");
-    // var folder = document.getElementById("folder");
-    // var level = document.getElementById("level");
-    // var title = document.getElementById("title");
-  
-
-    // add keys one-by-one -> need defaults which don't crash the pipelines
-    return {
-      "Level": lvl,
-      "Title": title,
-
-      "Abstract": "",
-      "Main-text": {
-        "content": "",
-        "content-type": "text/markdown"
-      },
-      "RelatedAides": [],
-      "Relevant data": {
-        "Tags": {
-          "Geographical": []
-        }
-      },
-      "Sources": {
-        "Primary sources": [],
-        "Secondary sources": []
-      },
-      "copyright_metadata": {
-        "copyright_holder": "",
-        "date": "",
-        "license": ""
-      },
-      "editing-metadata": []
-    };
-}
-
-
-
-function collect_data() {
-    var lang = document.getElementById("language").value;
-    var folder = document.getElementById("folder").value;
-    var level = document.getElementById("level").value;
-    var title = document.getElementById("title").value;
-
-
-    // var path = RAObj["fileinfo"]["path"];
-
-    if (title in RAs[lang][folder][level]) {
-        var RAObj = RAs[lang][folder][level][title];
-        var path = RAObj["fileinfo"]["filepath"];
-
-    } else {
-        var RAObj = createNew(level, title);
-        var path = `${folder}/niveau${level}/${lang}/${encodeURIComponent(title)}.yaml`;
-    }
-
-    RAObj["Abstract"] = tinyMDE1.getContent();
-    RAObj["Main-text"]["content"] = tinyMDE2.getContent();
-
-    RAObj["copyright_metadata"]["copyright_holder"] = document.getElementById("copyright").value;
-    RAObj["copyright_metadata"]["date"] = document.getElementById("copyright-time").value;
-    RAObj["copyright_metadata"]["license"] = document.getElementById("copyright-license").value;
-
-  
-    return [RAObj, path];
-}
 
 
 async function submit() {
@@ -457,6 +251,7 @@ function preview() {
   window.open(yamlBlob, '_blank');
 
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
